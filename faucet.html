@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solana Faucet</title>
+    <link rel="stylesheet" href="faucet.css" />
+  </head>
+  <body>
+    <div class="text">
+      <div class="solana">SOLANA FAUCET</div>
+      <form >
+        <div class="textfield">
+        <label for="inputText">Enter your address: </label>
+    
+        <input type="text" id="inputText" name="inputText" />
+   
+        </div>
+        <div  >
+        <button type="button"  class="button" onclick="submitForm()">SEND ME SOL</button>
+        </div>
+      </form>
+    </div>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script>
+      const { Connection, PublicKey } = solanaWeb3;
+    </script>
+    <script>
+      function submitForm() {
+        var solanaPublicKey = document.getElementById("inputText").value;
+
+        const connection = new Connection("https://api.devnet.solana.com");
+        let publicKeyObject = new PublicKey(solanaPublicKey);
+        const fn = async () => {
+          let txhash = await connection.requestAirdrop(
+            publicKeyObject,
+            2 * 1e9
+          );
+          console.log("txhash: ${txhash}");
+
+          const inputText = document.getElementById("inputText").value;
+          alert("This is just an example with no monetary value of SOL involved.If you want to see the results please switch to the devnet in your wallet ");
+          
+        };
+        fn();
+      }
+    </script>
+  </body>
+</html>

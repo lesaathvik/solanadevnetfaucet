@@ -1,0 +1,86 @@
+body {
+  background-image: url("image1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.text {
+  text-align: center;
+  margin: 15%;
+}
+.solana {
+  margin-bottom: 5%;
+  font-family: myFirstFont;
+  font-size: 80px;
+  font-weight: lighter;
+}
+.textfield {
+  font-family: mySecondFont;
+  font-size: 40px;
+  font-weight: bolder;
+}
+input[type="text"] {
+  height: 20px;
+  font-size: 24px;
+  padding: 10px;
+  line-height: 1.5;
+}
+@font-face {
+  font-family: myFirstFont;
+  src: url(Valorax-lg25V.otf);
+}
+@font-face {
+  font-family: mySecondFont;
+  src: url(metropolis.thin.otf);
+}
+.button {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  margin-top: 50px;
+  font-family: mySecondFont;
+  font-size: 30px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:after {
+  background-color: antiquewhite;
+  border-radius: 8px;
+  border: 2px solid #111;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 99%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+.button:hover:after {
+  transform: translate(0, 0);
+}
+
+.button:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button:hover {
+  outline: 0;
+}
